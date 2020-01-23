@@ -1,20 +1,23 @@
-import "./styles.css";
+import './styles.css';
 
-import React, { memo } from "react";
-import ReactDOM from "react-dom";
+import React, { memo } from 'react';
 
-import { useInputValue, useTodos } from "./custom-hooks";
+import { useInputValue, useTodos } from '../../utils/custom-hooks';
 
-import Layout from "../components/Layout";
+import Layout from '../../components/Layout';
 
-import AddTodo from "../components/AddTodo";
-import TodoList from "../components/TodoList";
+import AddTodo from '../../components/AddTodo';
+import TodoList from '../../components/TodoList';
 
-export default TodoApp = memo(props => {
-  const { inputValue, changeInput, clearInput, keyInput } = useInputValue();
-  const { todos, addTodo, checkTodo, removeTodo } = useTodos();
+const ToDoApp = memo((_props) => {
+  const {
+    inputValue, changeInput, clearInput, keyInput,
+  } = useInputValue();
+  const {
+    todos, addTodo, checkTodo, removeTodo,
+  } = useTodos();
 
-  const clearInputAndAddTodo = _ => {
+  const clearInputAndAddTodo = (_) => {
     clearInput();
     addTodo(inputValue);
   };
@@ -25,13 +28,14 @@ export default TodoApp = memo(props => {
         inputValue={inputValue}
         onInputChange={changeInput}
         onButtonClick={clearInputAndAddTodo}
-        onInputKeyPress={event => keyInput(event, clearInputAndAddTodo)}
+        onInputKeyPress={(event) => keyInput(event, clearInputAndAddTodo)}
       />
       <TodoList
         items={todos}
-        onItemCheck={idx => checkTodo(idx)}
-        onItemRemove={idx => removeTodo(idx)}
+        onItemCheck={(idx) => checkTodo(idx)}
+        onItemRemove={(idx) => removeTodo(idx)}
       />
     </Layout>
   );
 });
+export default ToDoApp;

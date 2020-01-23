@@ -1,4 +1,4 @@
-import ToDo from "../schemas/ToDoSchema";
+import ToDo from '../schemas/ToDoSchema';
 
 class ListToDoService {
   run(filter) {

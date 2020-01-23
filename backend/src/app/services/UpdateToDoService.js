@@ -1,6 +1,8 @@
-import ToDo from "../schemas/ToDoSchema";
-import GetToDoService from "./GetToDoService";
-import { Schema } from "mongoose";
+/** @typedef {import('mongoose').Schema.Types.ObjectId} ObjectId */
+/** @typedef {import('mongoose').Document} Document */
+
+import ToDo from '../schemas/ToDoSchema';
+import GetToDoService from './GetToDoService';
 
 class UpdateToDoService {
   /**

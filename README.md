@@ -1,5 +1,14 @@
 # Monorepo - ReactJS/NodeJS + CI/CD + Heroku Deployment Pipeline
 
+### Things to do
+
+- JSDocs
+- Automated Tests
+- Backend Calls
+- Toastify Notifications
+- Husky
+- Lint-staged
+
 ### Sources
 
 - React Tests

@@ -1,9 +1,12 @@
-import ToDo from "../schemas/ToDoSchema";
-import { Schema, Document } from "mongoose";
+/** @typedef {import('mongoose').Schema.Types.ObjectId} ObjectId */
+/** @typedef {import('mongoose').Document} Document */
+
+import ToDo from '../schemas/ToDoSchema';
+
 class GetToDoService {
   /**
    *
-   * @param {Schema.Types.ObjectId} _id
+   * @param {ObjectId} _id
    * @returns {Document}
    */
   async run(_id) {

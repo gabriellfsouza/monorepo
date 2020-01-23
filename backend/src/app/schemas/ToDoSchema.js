@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 /**
  * Todo mongo database schema's definition
@@ -7,8 +7,8 @@ const ToDoSchema = new Schema({
   text: String,
   checked: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
-export default model("ToDo", ToDoSchema);
+export default model('ToDo', ToDoSchema);

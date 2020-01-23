@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true,
     },
     "extends": [
         "plugin:react/recommended",
@@ -22,5 +23,11 @@ module.exports = {
         "react"
     ],
     "rules": {
+      'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+      "no-unused-vars": ["error",{ "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }],
+      'import/prefer-default-export': 'off',
+      'react/jsx-props-no-spreading': 'off',
+      'no-param-reassign': 'off',
+      'no-console':'off',
     }
 };

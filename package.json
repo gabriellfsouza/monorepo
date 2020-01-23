@@ -1,0 +1,19 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gabriellfsouza/monorepo.git",
+  "author": "Gabriel Lima <gabriellfsouza@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^4.0.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "scripts": {
+    "lint": "yarn --cwd ./backend/ lint-staged && yarn --cwd ./frontend/ lint-staged"
+  }
+}
