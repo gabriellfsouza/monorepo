@@ -15,7 +15,8 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "git add"
+      "git add",
+      "git commit -m \"chore: autofixed code by lint-staged\""
     ]
   },
   "scripts": {
