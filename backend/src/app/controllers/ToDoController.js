@@ -1,10 +1,21 @@
-import CreateToDoService from '~/app/services/CreateToDoService';
-import GetToDoService from '~/app/services/GetToDoService';
-import ListToDoService from '~/app/services/ListToDoService';
-import UpdateToDoService from '~/app/services/UpdateToDoService';
-import ControllerUtils from '~/app/utils/ControllerUtils';
+import CreateToDoService from '../services/CreateToDoService';
+import GetToDoService from '../services/GetToDoService';
+import ListToDoService from '../services/ListToDoService';
+import UpdateToDoService from '../services/UpdateToDoService';
+import DeleteToDoService from '../services/DeleteToDoService';
+import ControllerUtils from '../utils/ControllerUtils';
 
 class ToDoController extends ControllerUtils {
+  constructor() {
+    super();
+
+    this.store = this.store.bind(this);
+    this.update = this.update.bind(this);
+    this.index = this.index.bind(this);
+    this.destroy = this.destroy.bind(this);
+    this.show = this.show.bind(this);
+  }
+
   /**
    * Store new ToDo
    * @param {Request} req
@@ -22,7 +33,8 @@ class ToDoController extends ControllerUtils {
    * @param {Response} res
    */
   async update(req, res) {
-    const promise = (async () => UpdateToDoService.run(req.body))();
+    const { _id } = req.params;
+    const promise = (async () => UpdateToDoService.run(_id, req.body))();
 
     this.defaultHandler(res, promise);
   }
@@ -44,7 +56,20 @@ class ToDoController extends ControllerUtils {
    * @param {Response} res
    */
   async show(req, res) {
-    const promise = (async () => GetToDoService.run(req.body))();
+    const { _id } = req.params;
+    const promise = (async () => GetToDoService.run(_id, req.body))();
+
+    this.defaultHandler(res, promise);
+  }
+
+  /**
+   * Delete a specific ToDo
+   * @param {Request} req
+   * @param {Response} res
+   */
+  async destroy(req, res) {
+    const { _id } = req.params;
+    const promise = (async () => DeleteToDoService.run(_id, req.body))();
 
     this.defaultHandler(res, promise);
   }

@@ -11,7 +11,7 @@ class GetToDoService {
    */
   async run(_id) {
     const toDo = await ToDo.findById(_id);
-
+    if (!toDo) throw new ValidationError('to-do task not found', 404);
     return toDo;
   }
 }

@@ -15,3 +15,6 @@
   https://jestjs.io/docs/en/tutorial-react
 - Front End
   https://blog.blackbox-vision.tech/making-a-beautiful-todo-app-using-react-hooks-material-ui/
+- Mongoose and Jest
+  https://medium.com/javascript-in-plain-english/how-i-setup-unit-test-for-mongodb-using-jest-mongoose-103b772ee164
+  https://github.com/shelfio/jest-mongodb

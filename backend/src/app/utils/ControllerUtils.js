@@ -1,4 +1,8 @@
 class ControllerUtils {
+  constructor() {
+    this.defaultHandler = this.defaultHandler.bind(this);
+  }
+
   /**
    *
    * @param {Response} res

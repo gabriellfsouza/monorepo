@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true,
     },
     "extends": [
         "airbnb-base"
@@ -28,6 +29,9 @@ module.exports = {
     "rules": {
       "class-methods-use-this": "off",
       "no-underscore-dangle": "off",
-      "no-unused-vars": ["error",{ "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }]
+      "no-unused-vars": [
+        "error",{ "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }
+      ],
+      'import/prefer-default-export':'off',
     }
 };

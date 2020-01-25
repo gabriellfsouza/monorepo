@@ -4,12 +4,13 @@ require('dotenv').config({
   path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env',
 });
 
+
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
   // Stop running tests after `n` failures
-  // bail: 0,
+  bail: 1,
 
   // Respect "browser" field in package.json when resolving modules
   // browser: false,
@@ -26,7 +27,7 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage
   // information should be collected
-  // collectCoverageFrom: null,
+  collectCoverageFrom: ['src/app/**/*.js'],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
@@ -37,12 +38,12 @@ module.exports = {
   // ],
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
+  coverageReporters: [
   //   "json",
-  //   "text",
-  //   "lcov",
+    'text',
+    'lcov',
   //   "clover"
-  // ],
+  ],
 
   // An object that configures minimum threshold enforcement for coverage
   // results
@@ -93,7 +94,9 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out
   // resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '~(.*)$': '<rootDir>/src/$1',
+  },
 
   // An array of regexp pattern strings, matched against all module paths before
   //  considered 'visible' to the module loader
@@ -106,7 +109,7 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: null,
+  preset: '@shelf/jest-mongodb',
 
   // Run tests from one or more projects
   // projects: null,
@@ -143,7 +146,7 @@ module.exports = {
 
   // A list of paths to modules that run some code to configure or set up the
   // testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ['./jest.setup.js'],
 
   // A list of paths to snapshot serializer modules Jest should use for
   // snapshot testing
@@ -159,10 +162,10 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
+  testMatch: [
+    '**/__tests__/**/*.test.js',
   //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths,
   //  matched tests are skipped
@@ -193,9 +196,9 @@ module.exports = {
 
   // An array of regexp pattern strings that are matched against all source
   // file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  transform: {
+    '.(js|jsx|ts|tsx)': '@sucrase/jest-plugin',
+  },
 
   // An array of regexp pattern strings that are matched against all modules
   // before the module loader will automatically return a mock for them

@@ -6,6 +6,7 @@
   "author": "Gabriel Lima <gabriellfsouza@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^5.0.2",
     "husky": "^4.0.10"
   },
   "husky": {
@@ -14,6 +15,7 @@
     }
   },
   "scripts": {
-    "lint": "yarn --cwd ./backend/ lint-staged && yarn --cwd ./frontend/ lint-staged"
+    "lint": "yarn --cwd ./backend/ lint-staged && yarn --cwd ./frontend/ lint-staged",
+    "dev": "concurrently \"yarn --cwd ./backend dev\" \"yarn --cwd ./frontend start\""
   }
 }
