@@ -6,7 +6,7 @@ import uniqueId from 'lodash/uniqueId';
 import TodoListItem from '~/components/TodoListItem';
 
 const TodoList = memo((props) => (
-  <>
+  <div data-testid="todo-list">
     {props.items.length > 0 && (
       <Paper style={{ margin: 16 }}>
         <List style={{ overflow: 'scroll' }}>
@@ -22,7 +22,7 @@ const TodoList = memo((props) => (
         </List>
       </Paper>
     )}
-  </>
+  </div>
 ));
 
 TodoList.propTypes = {

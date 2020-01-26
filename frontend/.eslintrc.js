@@ -24,7 +24,11 @@ module.exports = {
     ],
     "rules": {
       'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
-      "no-unused-vars": ["error",{ "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }],
+      "no-unused-vars": [
+        "error",{
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "^_"
+      }],
       'import/prefer-default-export': 'off',
       'react/jsx-props-no-spreading': 'off',
       'no-param-reassign': 'off',
