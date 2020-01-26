@@ -23,7 +23,7 @@
     "*.js": [
       "eslint --fix",
       "jest --findRelatedTests",
-      "git add."
+      "git add"
     ]
   },
   "scripts": {
@@ -34,6 +34,7 @@
     "start": "node -r sucrase/register src/server.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "eslint-import-resolver-node": "^0.3.3",
     "express": "^4.17.1",

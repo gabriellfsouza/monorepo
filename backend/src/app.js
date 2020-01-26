@@ -3,6 +3,7 @@ import { config } from 'dotenv';
 
 config({ path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env' });
 
+import cors from 'cors';
 import express from 'express';
 import 'express-async-errors';
 import './app/validators/ValidationError';
@@ -26,6 +27,7 @@ class App {
    */
   middlewares() {
     this.server.disable('x-powered-by');
+    this.server.use(cors());
     this.server.use(express.json());
   }
 

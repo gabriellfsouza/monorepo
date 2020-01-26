@@ -3,7 +3,7 @@ import { List, Paper } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import uniqueId from 'lodash/uniqueId';
 
-import TodoListItem from '../TodoListItem';
+import TodoListItem from '~/components/TodoListItem';
 
 const TodoList = memo((props) => (
   <>
