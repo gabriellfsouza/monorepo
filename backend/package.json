@@ -29,9 +29,10 @@
   "scripts": {
     "dev": "nodemon src/server.js --ignore __tests__",
     "debug": "node --inspect-brk -r sucrase/register src/server.js",
-    "test": "jest",
     "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/ --ignore-pattern dist/",
-    "start": "node -r sucrase/register src/server.js"
+    "test": "jest",
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "start": "node ./dist/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
