@@ -1,9 +1,9 @@
 {
   "name": "monorepo",
+  "version": "1.0.0",
   "engines": {
     "yarn": "^1.19.2"
   },
-  "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/gabriellfsouza/monorepo.git",
   "author": "Gabriel Lima <gabriellfsouza@gmail.com>",
@@ -14,7 +14,8 @@
     }
   },
   "devDependencies": {
-    "concurrently": "^5.0.2"
+    "concurrently": "^5.0.2",
+    "husky": "^4.0.10"
   },
   "scripts": {
     "postinstall": "yarn --cwd ./backend && yarn --cwd ./frontend",
