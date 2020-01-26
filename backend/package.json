@@ -16,7 +16,6 @@
     "faker": "^4.1.0",
     "jest": "^24.9.0",
     "nodemon": "^2.0.2",
-    "sucrase": "^3.12.1",
     "supertest": "^4.0.2"
   },
   "lint-staged": {
@@ -35,6 +34,7 @@
     "start": "node ./dist/server.js"
   },
   "dependencies": {
+    "sucrase": "^3.12.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "eslint-import-resolver-node": "^0.3.3",
