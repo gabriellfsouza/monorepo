@@ -1,5 +1,8 @@
 {
   "name": "monorepo",
+  "engines": {
+    "yarn": "^1.19.2"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/gabriellfsouza/monorepo.git",
