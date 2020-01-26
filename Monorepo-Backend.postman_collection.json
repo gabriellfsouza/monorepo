@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Monorepo-Backend",
+		"_postman_id": "b75a71e1-87db-7d66-9c57-df2f54b6c861",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List",
+			"request": {
+				"url": "http://127.0.0.1:3333/v1/api/todos/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Read",
+			"request": {
+				"url": "http://127.0.0.1:3333/v1/api/todos/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"url": "http://127.0.0.1:3333/v1/api/todos/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\":\"test\",\n\t\"checked\":false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"url": "http://127.0.0.1:3333/v1/api/todos/5e2e043c12f8c41398f30376",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"checked\": true,\n    \"text\": \"test\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List copy",
+			"request": {
+				"url": "http://127.0.0.1:3333/v1/api/todos/5e2e043c12f8c41398f30376",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

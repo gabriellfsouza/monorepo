@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useContext } from 'react';
+import { Context } from '~/contexts/ToDoContext';
+import { listTodos } from './services/api/todos';
 import './App.css';
+import ToDoApp from './pages/ToDoApp';
 
 function App() {
+  const { setToDos } = useContext(Context);
+
+  useEffect(() => {
+    async function get() {
+      const response = await listTodos();
+      setToDos(response.data);
+    }
+    get();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToDoApp />
     </div>
   );
 }
