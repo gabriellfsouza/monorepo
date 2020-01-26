@@ -5,7 +5,6 @@
 - JSDocs
 - Automated Tests
 - Backend Calls
-- Toastify Notifications
 - Husky
 - Lint-staged
 
