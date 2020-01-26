@@ -11,8 +11,7 @@
     }
   },
   "devDependencies": {
-    "concurrently": "^5.0.2",
-    "husky": "^4.0.10"
+    "concurrently": "^5.0.2"
   },
   "scripts": {
     "postinstall": "yarn --cwd ./backend && yarn --cwd ./frontend",
