@@ -17,6 +17,7 @@
     "postinstall": "yarn --cwd ./backend && yarn --cwd ./frontend",
     "lint": "yarn --cwd ./backend/ lint-staged && yarn --cwd ./frontend/ lint-staged",
     "dev": "concurrently \"yarn --cwd ./backend dev\" \"yarn --cwd ./frontend start\"",
+    "test": "yarn --cwd ./backend/ test && yarn --cwd ./frontend/ test",
     "build": "yarn --cwd ./backend build && yarn --cwd ./frontend build",
     "postbuild": "yarn copyfiles -a ./frontend/build/**/*.* ./backend/tmp/",
     "start": "yarn --cwd ./backend start"
