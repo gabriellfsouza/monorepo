@@ -13,7 +13,7 @@ function App() {
       setToDos(response.data);
     }
     get();
-  }, []);
+  });
 
   return (
     <div className="App">

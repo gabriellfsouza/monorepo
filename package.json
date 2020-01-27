@@ -1,6 +1,9 @@
 {
   "name": "monorepo",
   "version": "1.0.0",
+  "engines": {
+    "yarn": "^1.19.2"
+  },
   "main": "index.js",
   "repository": "https://github.com/gabriellfsouza/monorepo.git",
   "author": "Gabriel Lima <gabriellfsouza@gmail.com>",
@@ -10,17 +13,18 @@
       "pre-commit": "yarn lint"
     }
   },
-  "devDependencies": {
-    "concurrently": "^5.0.2",
-    "husky": "^4.0.10"
-  },
   "scripts": {
     "postinstall": "yarn --cwd ./backend && yarn --cwd ./frontend",
     "lint": "yarn --cwd ./backend/ lint-staged && yarn --cwd ./frontend/ lint-staged",
     "dev": "concurrently \"yarn --cwd ./backend dev\" \"yarn --cwd ./frontend start\"",
+    "test": "yarn --cwd ./backend/ test && yarn --cwd ./frontend/ test",
     "build": "yarn --cwd ./backend build && yarn --cwd ./frontend build",
     "postbuild": "yarn copyfiles -a ./frontend/build/**/*.* ./backend/tmp/",
     "start": "yarn --cwd ./backend start"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "husky": "^4.0.10"
   },
   "dependencies": {
     "copyfiles": "^2.1.1"
